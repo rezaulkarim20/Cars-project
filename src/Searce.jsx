@@ -1,15 +1,27 @@
-const Searce = () => {
+import PropTypes from "prop-types";
+import FilterOnlyPrimium from "./FilterOnlyPrimium";
+
+const Searce = ({ searchTerm, onSearchProduct, onChecker, CheckPremium }) => {
   return (
-    <div className="flex gap-3 items-center  ">
-      <input
-        className="pr-16 py-1 border outline-none rounded-md   "
-        type="text"
-        placeholder=" Search cars....."
-      />
-      <input type="checkbox" name="" id="" />
-      <span className="font-semibold"> Show Premium Only</span>
-    </div>
+    <form>
+      <div className="flex items-center gap-3  ">
+        <input
+          className="pr-16 py-1 border outline-none rounded-md"
+          type="text"
+          value={searchTerm}
+          placeholder=" Search cars....."
+          onChange={(event) => onSearchProduct(event.target.value)}
+        />
+        <FilterOnlyPrimium CheckPremium={CheckPremium} onChecker={onChecker} />
+      </div>
+    </form>
   );
+};
+Searce.propTypes = {
+  searchTerm: PropTypes.string.isRequired,
+  onSearchProduct: PropTypes.func.isRequired,
+  onChecker: PropTypes.string.isRequired,
+  CheckPremium: PropTypes.string.isRequired,
 };
 
 export default Searce;

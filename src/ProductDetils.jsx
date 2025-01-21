@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 
 const ProductDetils = ({ title, brand, year, price, isPremium }) => {
   return (
-    <div>
+    <div className="bg-white shadow p-4 mt-4 rounded-lg">
       <h2 className="font-bold capitalize">title:{title}</h2>
       <p>
         <span className="font-bold capitalize">brand: </span>

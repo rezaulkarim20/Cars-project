@@ -6,7 +6,7 @@ const ProductCart = ({ item }) => {
   const { title, brand, year, price, isPremium } = item;
 
   return (
-    <div>
+    <div className=" ">
       <ProductDetils
         title={title}
         brand={brand}
