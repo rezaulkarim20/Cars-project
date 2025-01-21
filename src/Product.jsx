@@ -57,15 +57,15 @@ const Product = () => {
     <div className="mx-auto p-10">
       <Header />
       <Searce
-        searchTerm={searchTerm}
-        onSearchProduct={setSearchTerm}
         CheckPremium={CheckPremium}
         onChecker={onChecker}
+        searchTerm={searchTerm}
+        onSearchProduct={setSearchTerm}
       />
       <Productlist
+        CheckPremium={CheckPremium}
         searchTerm={searchTerm}
         items={PRODUCTS}
-        CheckPremium={CheckPremium}
       />
     </div>
   );
